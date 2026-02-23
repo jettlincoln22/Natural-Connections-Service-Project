@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumanConnect Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>HumanConnect</h1>
+            <p>Prioritizing Heartfelt Human Interaction</p>
+        </header>
+
+        <section id="daily-survey">
+            <h3>Daily Check-In</h3>
+            <label for="stress">How is your stress level today? (1-10):</label>
+            <input type="range" id="stress" min="1" max="10" value="5">
+            
+            <label for="day-description">Tell me briefly about your day:</label>
+            <textarea id="day-description" placeholder="How are you feeling..."></textarea>
+        </section>
+
+        <section id="med-tracker">
+            <h3>Medication Schedule</h3>
+            <p>It is time for your scheduled dosage.</p>
+            <label>Are you planning to take your medication?</label>
+            <select id="med-status">
+                <option value="taking">Yes, taking it now.</option>
+                <option value="unsure">I'm not sure/unwanted side effects.</option>
+                <option value="skipping">I am thinking about skipping it.</option>
+            </select>
+        </section>
+
+        <button id="submit-btn" onclick="analyzeMentalHealth()">Submit Update</button>
+
+        <div id="human-loop-alert" class="hidden">
+            <div class="alert-content">
+                <h2>Human Connection Triggered</h2>
+                <p id="alert-message"></p>
+                <p><strong>Action:</strong> Your trusted contact has been notified to give you a call or visit[cite: 21].</p>
+                <button onclick="closeAlert()">I'm talking to them now</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
